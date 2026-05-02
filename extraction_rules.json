@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-01T00:00:00Z",
+  "rules": [
+    {
+      "id": "novelbin_chapter",
+      "name": "novelbin_chapter",
+      "enabled": true,
+      "hostContains": [
+        "novelbin",
+        "novelfull",
+        "readnovelfull"
+      ],
+      "contentSelectors": [
+        "#chr-content",
+        ".chr-c",
+        "#chapter-content",
+        ".chapter-content"
+      ],
+      "paragraphSelectors": [
+        "#chr-content p",
+        ".chr-c p"
+      ],
+      "titleSelectors": [
+        "h2 a.chr-title",
+        ".chr-title",
+        ".chr-text",
+        ".nchr-text.chapter-title",
+        "span.chapter-title",
+        "h1",
+        "h2"
+      ],
+      "authorSelectors": [
+        "[itemprop=\"author\"]",
+        ".author a",
+        ".author",
+        ".info a[href*=\"author\"]",
+        "a[href*=\"/authors/\"]"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]",
+        ".book img",
+        ".novel-info img",
+        ".book-cover img"
+      ],
+      "clutterSelectors": [
+        ".chr-nav",
+        ".chapter-nav",
+        "#chapter-nav-top",
+        "#chapter-nav-bot",
+        ".nav-chapter",
+        ".chapter-control",
+        ".chapter-options",
+        ".chapter-report",
+        "#chapter_error",
+        ".comments",
+        "#comments",
+        ".comment-list",
+        ".reaction",
+        ".ads-responsive",
+        ".ad-container",
+        ".breadcrumb"
+      ],
+      "nextTextHints": [
+        "next chapter"
+      ],
+      "nextClassHints": [
+        "next",
+        "nextchap",
+        "nchr"
+      ],
+      "interactiveClientRender": true,
+      "warmupAttempts": 4,
+      "warmupDelayMs": 1500,
+      "minTextLength": 200
+    },
+    {
+      "id": "generic_wordpress_novel",
+      "name": "generic_wordpress_novel",
+      "enabled": false,
+      "hostContains": [
+        "example-novel.com"
+      ],
+      "contentSelectors": [
+        ".entry-content",
+        ".post-content",
+        ".chapter-content",
+        "#chapter-content",
+        "article"
+      ],
+      "paragraphSelectors": [
+        ".entry-content p",
+        ".post-content p",
+        ".chapter-content p"
+      ],
+      "titleSelectors": [
+        "h1.entry-title",
+        "h1",
+        ".chapter-title"
+      ],
+      "authorSelectors": [
+        ".author a",
+        ".byline a",
+        "[itemprop=\"author\"]"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]"
+      ],
+      "clutterSelectors": [
+        "script",
+        "style",
+        "noscript",
+        ".ads",
+        ".advertisement",
+        ".sharedaddy",
+        ".chapter-nav",
+        ".nav-links",
+        "#comments",
+        ".comments-area",
+        ".related-posts",
+        ".recommended"
+      ],
+      "nextTextHints": [
+        "next chapter",
+        "next"
+      ],
+      "nextClassHints": [
+        "next",
+        "next-chapter"
+      ],
+      "interactiveClientRender": false,
+      "warmupAttempts": 1,
+      "warmupDelayMs": 0,
+      "minTextLength": 200
+    },
+    {
+      "id": "custom_site_template",
+      "name": "custom_site_template",
+      "enabled": false,
+      "hostContains": [
+        "your-site-domain.com"
+      ],
+      "contentSelectors": [
+        ".reader-body",
+        ".chapter-body",
+        "#reader-content"
+      ],
+      "paragraphSelectors": [
+        ".reader-body p",
+        ".chapter-body p"
+      ],
+      "titleSelectors": [
+        ".chapter-heading",
+        ".chapter-title",
+        "h1"
+      ],
+      "authorSelectors": [
+        ".book-author",
+        ".author"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        ".cover img"
+      ],
+      "clutterSelectors": [
+        ".ad",
+        ".ads",
+        ".share",
+        ".chapter-nav",
+        "#comments"
+      ],
+      "nextTextHints": [
+        "next chapter"
+      ],
+      "nextClassHints": [
+        "next",
+        "nextchap"
+      ],
+      "interactiveClientRender": false,
+      "warmupAttempts": 1,
+      "warmupDelayMs": 0,
+      "minTextLength": 200
+    }
+  ]
+}
