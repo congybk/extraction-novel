@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-01T00:00:00Z",
+  "updatedAt": "2026-05-02T00:00:00Z",
   "rules": [
     {
       "id": "novelbin_chapter",
-      "name": "novelbin_chapter",
+      "name": "NovelBin / NovelFull chapter",
       "enabled": true,
       "hostContains": [
         "novelbin",
@@ -19,7 +19,9 @@
       ],
       "paragraphSelectors": [
         "#chr-content p",
-        ".chr-c p"
+        ".chr-c p",
+        "#chapter-content p",
+        ".chapter-content p"
       ],
       "titleSelectors": [
         "h2 a.chr-title",
@@ -45,11 +47,6 @@
         ".book-cover img"
       ],
       "clutterSelectors": [
-        ".chr-nav",
-        ".chapter-nav",
-        "#chapter-nav-top",
-        "#chapter-nav-bot",
-        ".nav-chapter",
         ".chapter-control",
         ".chapter-options",
         ".chapter-report",
@@ -76,8 +73,455 @@
       "minTextLength": 200
     },
     {
+      "id": "royalroad_chapter",
+      "name": "Royal Road chapter",
+      "enabled": true,
+      "hostContains": [
+        "royalroad.com"
+      ],
+      "contentSelectors": [
+        ".chapter-inner.chapter-content",
+        ".chapter-content",
+        ".chapter-inner",
+        "article"
+      ],
+      "paragraphSelectors": [
+        ".chapter-content p",
+        ".chapter-inner p"
+      ],
+      "titleSelectors": [
+        ".chapter-title",
+        "h1",
+        "h2",
+        ".font-white"
+      ],
+      "authorSelectors": [
+        ".profile-info h4 a",
+        ".profile-info a",
+        "a[href*=\"/profile/\"]",
+        ".author a"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]",
+        ".fic-header img",
+        ".cover-art img",
+        ".thumbnail img"
+      ],
+      "clutterSelectors": [
+        ".ad-container",
+        ".author-note-portlet",
+        ".portlet-title",
+        ".help-block",
+        ".social-icons",
+        ".comments",
+        "#comments"
+      ],
+      "nextTextHints": [
+        "next chapter"
+      ],
+      "nextClassHints": [
+        "next",
+        "btn-primary"
+      ],
+      "interactiveClientRender": false,
+      "warmupAttempts": 1,
+      "warmupDelayMs": 0,
+      "minTextLength": 200
+    },
+    {
+      "id": "wattpad_story",
+      "name": "Wattpad story part",
+      "enabled": true,
+      "hostContains": [
+        "wattpad.com"
+      ],
+      "contentSelectors": [
+        "div[data-testid=\"story-part-text\"]",
+        ".panel-reading",
+        ".story-part",
+        ".story-text-container",
+        "pre.story-text",
+        "[class*=\"storytext\"]",
+        "[class*=\"story-text\"]",
+        "article"
+      ],
+      "paragraphSelectors": [
+        ".panel-reading pre p[data-p-id]",
+        ".panel-reading p[data-p-id]",
+        "p.g-body-2",
+        "p[class*=\"g-body\"]",
+        "p[data-testid]"
+      ],
+      "titleSelectors": [
+        "h1",
+        ".story-part h1",
+        ".panel-reading h1",
+        "[data-testid=\"story-part-title\"]"
+      ],
+      "authorSelectors": [
+        ".author a",
+        ".author-info a",
+        "[data-testid=\"story-author\"]",
+        "a[href^=\"/user/\"]"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]",
+        ".story-info img",
+        ".cover img"
+      ],
+      "clutterSelectors": [
+        ".sharing-layout",
+        ".vote-bar",
+        ".comment-dot",
+        ".on-promo-footer",
+        ".premium-upsell",
+        ".v-related-stories",
+        ".author-bio",
+        ".tags-container",
+        ".story-tags",
+        ".comment-count",
+        ".post-comment-btn",
+        "#story-part-comments",
+        ".comments-ad-unit"
+      ],
+      "nextTextHints": [
+        "next part",
+        "continue to"
+      ],
+      "nextClassHints": [
+        "on-navigation-next-part",
+        "next-part",
+        "next"
+      ],
+      "interactiveClientRender": true,
+      "warmupAttempts": 3,
+      "warmupDelayMs": 1500,
+      "minTextLength": 200
+    },
+    {
+      "id": "webnovel_chapter",
+      "name": "Webnovel chapter",
+      "enabled": true,
+      "hostContains": [
+        "webnovel.com"
+      ],
+      "contentSelectors": [
+        ".cha-content",
+        ".cha-words",
+        ".chapter_content",
+        ".chapter-text",
+        "[class*=\"cha-content\"]",
+        "[class*=\"chapter-content\"]",
+        "[class*=\"reader-content\"]",
+        ".j_chapterWrapper",
+        "article"
+      ],
+      "paragraphSelectors": [
+        ".cha-content p",
+        ".cha-words p",
+        ".chapter_content p",
+        "[class*=\"cha-content\"] p",
+        "[class*=\"chapter-content\"] p",
+        ".cha-content div",
+        ".cha-words div"
+      ],
+      "titleSelectors": [
+        "h1",
+        ".cha-tit",
+        ".chapter-title",
+        "[class*=\"chapter-title\"]"
+      ],
+      "authorSelectors": [
+        ".author a",
+        "[class*=\"author\"] a",
+        "a[href*=\"/profile/\"]"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]",
+        ".book-cover img",
+        ".cover img"
+      ],
+      "clutterSelectors": [
+        ".cha-nav",
+        ".cha-header",
+        ".cha-footer",
+        ".j_cha_ad",
+        ".j_cha_comment",
+        ".j_gift_btn",
+        ".cha-score",
+        ".cha-review",
+        ".cha-operation",
+        ".cha-comment-wrap",
+        ".chapter-actions",
+        ".reader-topbar",
+        ".reader-toolbar",
+        ".cha-book-marks",
+        ".comments",
+        "#comments"
+      ],
+      "nextTextHints": [
+        "next chapter"
+      ],
+      "nextClassHints": [
+        "cha-next",
+        "next"
+      ],
+      "interactiveClientRender": true,
+      "warmupAttempts": 6,
+      "warmupDelayMs": 2000,
+      "minTextLength": 200
+    },
+    {
+      "id": "wuxiaworld_chapter",
+      "name": "Wuxiaworld chapter",
+      "enabled": true,
+      "hostContains": [
+        "wuxiaworld.com"
+      ],
+      "contentSelectors": [
+        ".chapter-content",
+        ".fr-view.prose",
+        ".content-boundary .fr-view",
+        "[data-testid=\"chapter-content\"]",
+        "[class*=\"chapter-content\"]",
+        "article",
+        "main"
+      ],
+      "paragraphSelectors": [
+        ".chapter-content p",
+        ".fr-view.prose p",
+        ".content-boundary p",
+        "[class*=\"chapter-content\"] p"
+      ],
+      "titleSelectors": [
+        "[data-testid=\"heading\"]",
+        "[data-testid=\"title\"]",
+        "h1",
+        ".chapter-title"
+      ],
+      "authorSelectors": [
+        ".author a",
+        "[class*=\"author\"] a",
+        "a[href*=\"/profile/\"]"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]",
+        ".novel-cover img",
+        ".cover img"
+      ],
+      "clutterSelectors": [
+        ".ad-box",
+        ".comment-section",
+        ".comments",
+        "#comments"
+      ],
+      "nextTextHints": [
+        "next chapter"
+      ],
+      "nextClassHints": [
+        "swiper-next-ww-selector",
+        "next"
+      ],
+      "interactiveClientRender": true,
+      "warmupAttempts": 4,
+      "warmupDelayMs": 1500,
+      "minTextLength": 200
+    },
+    {
+      "id": "scribblehub_chapter",
+      "name": "Scribble Hub chapter",
+      "enabled": true,
+      "hostContains": [
+        "scribblehub.com"
+      ],
+      "contentSelectors": [
+        "#chp_raw",
+        ".chp_raw",
+        ".chapter-content",
+        ".entry-content",
+        ".reader-content",
+        "article"
+      ],
+      "paragraphSelectors": [
+        "#chp_raw p",
+        ".chp_raw p",
+        ".chapter-content p",
+        ".entry-content p"
+      ],
+      "titleSelectors": [
+        ".chapter-title",
+        ".chapter-title-container h1",
+        "h1",
+        "h2"
+      ],
+      "authorSelectors": [
+        ".auth_name a",
+        ".author a",
+        "[rel=\"author\"]",
+        "a[href*=\"/profile/\"]"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]",
+        ".fic_image img",
+        ".novel-cover img",
+        ".cover img"
+      ],
+      "clutterSelectors": [
+        ".adsbygoogle",
+        ".ad-container",
+        ".comments-area",
+        "#comments",
+        ".chapter-warnings",
+        ".sharedaddy"
+      ],
+      "nextTextHints": [
+        "next chapter"
+      ],
+      "nextClassHints": [
+        "next",
+        "chapter_next"
+      ],
+      "interactiveClientRender": true,
+      "warmupAttempts": 4,
+      "warmupDelayMs": 1500,
+      "minTextLength": 200
+    },
+    {
+      "id": "lightnovelworld_chapter",
+      "name": "LightNovelWorld chapter",
+      "enabled": true,
+      "hostContains": [
+        "lightnovelworld."
+      ],
+      "contentSelectors": [
+        "#chapter-container",
+        ".chapter-container",
+        ".chapter-content",
+        ".reader-content",
+        ".cha-content",
+        "[class*=\"chapter-content\"]",
+        "article"
+      ],
+      "paragraphSelectors": [
+        "#chapter-container p",
+        ".chapter-container p",
+        ".chapter-content p",
+        ".reader-content p",
+        ".cha-content p"
+      ],
+      "titleSelectors": [
+        ".chapter-title",
+        ".chapter-name",
+        "h1",
+        "h2"
+      ],
+      "authorSelectors": [
+        ".author a",
+        ".novel-author a",
+        "[itemprop=\"author\"]",
+        "a[href*=\"/author\"]"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]",
+        ".novel-cover img",
+        ".book-cover img",
+        ".cover img"
+      ],
+      "clutterSelectors": [
+        ".ads",
+        ".advertisement",
+        ".ad-container",
+        ".comments",
+        "#comments",
+        ".novel-comments"
+      ],
+      "nextTextHints": [
+        "next chapter"
+      ],
+      "nextClassHints": [
+        "next",
+        "next-chapter",
+        "chapter-next"
+      ],
+      "interactiveClientRender": true,
+      "warmupAttempts": 4,
+      "warmupDelayMs": 1500,
+      "minTextLength": 200
+    },
+    {
+      "id": "ranobes_chapter",
+      "name": "Ranobes chapter",
+      "enabled": true,
+      "hostContains": [
+        "ranobes."
+      ],
+      "contentSelectors": [
+        "#arrticle",
+        "#dle-content",
+        ".text",
+        ".chapter-content",
+        ".read-content",
+        ".full-text",
+        ".story",
+        "article"
+      ],
+      "paragraphSelectors": [
+        "#arrticle p",
+        "#dle-content p",
+        ".text p",
+        ".chapter-content p",
+        ".read-content p",
+        ".full-text p"
+      ],
+      "titleSelectors": [
+        ".title",
+        ".chapter-title",
+        "h1",
+        "h2"
+      ],
+      "authorSelectors": [
+        ".author a",
+        ".book-author a",
+        "[rel=\"author\"]",
+        "a[href*=\"/xfsearch/author\"]"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]",
+        ".book-cover img",
+        ".cover img",
+        ".poster img"
+      ],
+      "clutterSelectors": [
+        ".ads",
+        ".advertisement",
+        ".ad-container",
+        ".comments",
+        "#comments",
+        ".share",
+        ".related"
+      ],
+      "nextTextHints": [
+        "next chapter"
+      ],
+      "nextClassHints": [
+        "next",
+        "next-chapter"
+      ],
+      "interactiveClientRender": true,
+      "warmupAttempts": 4,
+      "warmupDelayMs": 1500,
+      "minTextLength": 200
+    },
+    {
       "id": "generic_wordpress_novel",
-      "name": "generic_wordpress_novel",
+      "name": "Generic WordPress novel template",
       "enabled": false,
       "hostContains": [
         "example-novel.com"
@@ -115,8 +559,6 @@
         ".ads",
         ".advertisement",
         ".sharedaddy",
-        ".chapter-nav",
-        ".nav-links",
         "#comments",
         ".comments-area",
         ".related-posts",
@@ -137,7 +579,7 @@
     },
     {
       "id": "custom_site_template",
-      "name": "custom_site_template",
+      "name": "Custom site template",
       "enabled": false,
       "hostContains": [
         "your-site-domain.com"
@@ -168,7 +610,6 @@
         ".ad",
         ".ads",
         ".share",
-        ".chapter-nav",
         "#comments"
       ],
       "nextTextHints": [
