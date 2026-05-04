@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-02T00:00:00Z",
+  "updatedAt": "2026-05-04T00:00:00Z",
   "rules": [
     {
       "id": "novelbin_chapter",
@@ -273,6 +273,70 @@
       "warmupAttempts": 6,
       "warmupDelayMs": 2000,
       "minTextLength": 200
+    },
+    {
+      "id": "fanfiction_story",
+      "name": "FanFiction.Net story",
+      "enabled": true,
+      "hostContains": [
+        "fanfiction.net"
+      ],
+      "contentSelectors": [
+        "#storytext",
+        "#storytextp #storytext",
+        "#storytextp",
+        ".storytext",
+        ".storytextp",
+        "[aria-label=\"story content\"]",
+        "[role=\"main\"][aria-label=\"story content\"]"
+      ],
+      "paragraphSelectors": [
+        "#storytext p",
+        "#storytext div",
+        "#storytextp p",
+        ".storytext p",
+        "[aria-label=\"story content\"] p"
+      ],
+      "titleSelectors": [
+        "#profile_top b.xcontrast_txt",
+        "#profile_top b",
+        "b.xcontrast_txt",
+        "h1"
+      ],
+      "authorSelectors": [
+        "#profile_top a[href^=\"/u/\"]",
+        "#profile_top a[href*=\"/u/\"]",
+        "a[href^=\"/u/\"]",
+        "a[href*=\"/u/\"]"
+      ],
+      "coverSelectors": [
+        "meta[property=\"og:image\"]",
+        "meta[name=\"twitter:image\"]",
+        "#profile_top img"
+      ],
+      "clutterSelectors": [
+        "script",
+        "style",
+        "noscript",
+        "iframe",
+        ".ad",
+        ".ads",
+        ".adsbygoogle",
+        ".advertisement",
+        "#review",
+        ".review"
+      ],
+      "nextTextHints": [
+        "next",
+        "next >"
+      ],
+      "nextClassHints": [
+        "next"
+      ],
+      "interactiveClientRender": true,
+      "warmupAttempts": 2,
+      "warmupDelayMs": 1000,
+      "minTextLength": 120
     },
     {
       "id": "wuxiaworld_chapter",
