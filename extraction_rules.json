@@ -315,7 +315,8 @@
         ".adsbygoogle",
         ".advertisement",
         "#review",
-        ".review"
+        ".review",
+        "#content"
       ],
       "nextTextHints": [
         "next",
