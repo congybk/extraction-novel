@@ -288,14 +288,17 @@
         ".storytext",
         ".storytextp",
         "[aria-label=\"story content\"]",
-        "[role=\"main\"][aria-label=\"story content\"]"
+        "[role=\"main\"][aria-label=\"story content\"]",
+        "#content"
       ],
       "paragraphSelectors": [
         "#storytext p",
         "#storytext div",
         "#storytextp p",
         ".storytext p",
-        "[aria-label=\"story content\"] p"
+        "[aria-label=\"story content\"] p",
+        "#content p",
+        "#content div"
       ],
       "titleSelectors": [
         "#profile_top b.xcontrast_txt",
@@ -332,6 +335,25 @@
       ],
       "nextClassHints": [
         "next"
+      ],
+      "textStartAfterPatterns": [
+        "^(?:\\d+\\s+)?Chapter\\s+\\d+\\s*:",
+        "Rated:"
+      ],
+      "textEndBeforePatterns": [
+        "^Ch\\s+\\d+\\s+of\\s+\\d+",
+        "^Review$",
+        "^Share:"
+      ],
+      "textExcludeLinePatterns": [
+        "\\bRated:",
+        "Rated:.*(?:Words:|Favs:|Follows:|Published:|Updated:)",
+        "^Rated:",
+        "^FanFiction(?:\\.Net)?$",
+        "^Story:\\s*Follow",
+        "^Author:\\s*Follow",
+        "^Contrast:",
+        "^Font:"
       ],
       "interactiveClientRender": true,
       "warmupAttempts": 2,
